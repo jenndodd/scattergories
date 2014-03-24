@@ -12,11 +12,7 @@ class Round < ActiveRecord::Base
     alphabet = ("a".."z").to_a
     unused_letters = ["q", "u", "v", "x", "y", "z"]
 
-    # @random_letter = alphabet - unused_letters
-    # self.after_initialize_letter
-    # $letter = @random_letter.sample
-    # $redis.HSET(round.id, "letter", @letter);
-    letter_set = alphabet - unused_letters
+    @letter_set = alphabet - unused_letters
     @number = 1
     @letter
   end
